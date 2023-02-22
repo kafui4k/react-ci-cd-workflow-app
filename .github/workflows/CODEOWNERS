@@ -1,4 +1,6 @@
 * @kafui4k
 *.js @kafui4k
-*.yml @kafui4k
+*.yml @kafui-alordo
 /public/ @kafui4k
+
+
