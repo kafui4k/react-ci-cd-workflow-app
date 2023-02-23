@@ -4,7 +4,7 @@
   "private": true,
   "repository": {
     "type": "git",
-    "url": "https://github.com/kafui4k/react-ci-cd-workflow-app.git"
+    "url": "https://github.com/kafui4k/react-ci-cd-workflow-app"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
