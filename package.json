@@ -25,7 +25,8 @@
   },
   "husky": {
     "hooks": {
-      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
     }
   },
   "eslintConfig": {
@@ -50,8 +51,14 @@
     "@commitlint/cli": "^17.4.4",
     "@commitlint/config-conventional": "^17.4.4",
     "@semantic-release/github": "^8.0.7",
+    "cz-conventional-changelog": "^3.3.0",
     "husky": "^8.0.3",
     "prettier": "2.8.4",
     "semantic-release": "^20.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
