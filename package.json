@@ -2,6 +2,10 @@
   "name": "ci-cd-react-app",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kafui4k/react-ci-cd-workflow-app"
+  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -18,6 +22,12 @@
     "eject": "react-scripts eject",
     "format:check": "prettier --check \"**/*.{js,jsx,yml,json,css,scss,md}\"",
     "format:write": "prettier --write \"**/*.{js,jsx,yml,json,css,scss,md}\""
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "prepare-commit-msg": "exec < /dev/tty && npx cz --hook || true"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -38,7 +48,17 @@
     ]
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@semantic-release/github": "^8.0.7",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^8.0.3",
     "prettier": "2.8.4",
     "semantic-release": "^20.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
