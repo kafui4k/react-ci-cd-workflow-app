@@ -10,10 +10,12 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           title: Title
           body: Body
-          assignees: "kafui4k, kafui-alordo"
+          assignees: |
+            kafui4k
+            kafui-alordo
       - run: |
           echo ${{ steps.issue.outputs.issue }}
-      - uses: ./.github/actions/hello
+      - uses: ./.github/actions/hello-docker
         id: hello
         with:
           who-to-greet: "World"
